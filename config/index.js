@@ -6,15 +6,25 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/portal': {
+        // 测试服务器
+        // target: 'http://134.175.1.174:8080',
+        // 本地
+        target: 'http://127.0.0.1:8080',
+        changeOrigin: true,//允许跨域
+        pathRewrite:{
+          '^/portal':'/portal'
+        }
+      },
+    },
 
     // Various Dev Server settings
-    host: 'localhost', // can be overwritten by process.env.HOST
-    port: 8080, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
+    host: '127.0.0.1', // can be overwritten by process.env.HOST
+    port: 8081, // can be overwritten by process.env.PORT, if port is in use, a free one will be determined
     autoOpenBrowser: false,
     errorOverlay: true,
     notifyOnErrors: true,
