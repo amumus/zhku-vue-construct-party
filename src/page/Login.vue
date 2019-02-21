@@ -66,7 +66,7 @@
         //   });
         //绕过登录
         sessionStorage.setItem('username', "admin");
-        this.$router.push({ path: '/table' });
+        this.$router.push({ path: '/home' });
       }
     }
   }

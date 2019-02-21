@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/page/Login'
 import Table from '@/page/nav1/Table'
-import Main from '@/page/Home'
+import Home from '@/page/Home'
 import Form from '@/page/nav1/Form'
 import User from '@/page/nav1/user'
 
@@ -22,15 +22,19 @@ export default new Router({
       component: Table
     },
     {
+      path: '/home',
+      name: 'Home',
+      component: Home
+    },
+    {
       path: '/',
       component: Home,
       name: '导航一',
       iconCls: 'el-icon-message',//图标样式class
       children: [
-        { path: '/main', component: Main, name: '主页', hidden: true },
         { path: '/table', component: Table, name: 'Table' },
         { path: '/form', component: Form, name: 'Form' },
-        { path: '/user', component: user, name: '列表' },
+        { path: '/user', component: User, name: '列表' },
       ]
     },
   ]
