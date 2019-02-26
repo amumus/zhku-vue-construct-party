@@ -45,7 +45,7 @@ export default new Router({
       path: '/',
       component: Home,
       name: '导航2',
-      iconCls: 'el-icon-message',//图标样式class
+      iconCls: 'el-icon-menu',//图标样式class
       children: [
         { path: '/main', component: Main, name: '主页', hidden: true },
         { path: '/table', component: Table, name: 'Table' },
