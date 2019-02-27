@@ -18,12 +18,6 @@ export default new Router({
       hidden: true
     },
     {
-      path: '/table',
-      name: 'Table',
-      component: Table,
-      hidden: true
-    },
-    {
       path: '/home',
       name: 'Home',
       component: Home,
