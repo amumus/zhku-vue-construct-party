@@ -83,10 +83,6 @@
 					<el-input v-model="addForm.name" auto-complete="off"></el-input>
 				</el-form-item>
 				<el-form-item label="性别">
-					<el-radio-group v-model="addForm.sex">
-						<el-radio class="radio" :label="1">男</el-radio>
-						<el-radio class="radio" :label="0">女</el-radio>
-					</el-radio-group>
 				</el-form-item>
 				<el-form-item label="年龄">
 					<el-input-number v-model="addForm.age" :min="0" :max="200"></el-input-number>
@@ -132,12 +128,12 @@
 				},
 				//编辑界面数据
 				editForm: {
-					id: 0,
-					name: '',
-					sex: -1,
-					age: 0,
-					birth: '',
-					addr: ''
+          identity_code: '',
+          name: '',
+					email: '',
+          college: '',
+					major: '',
+					phone: ''
 				},
 
 				addFormVisible: false,//新增界面是否显示
@@ -149,20 +145,17 @@
 				},
 				//新增界面数据
 				addForm: {
-					name: '',
-					sex: -1,
-					age: 0,
-					birth: '',
-					addr: ''
-				}
+          identity_code: '',
+          name: '',
+          email: '',
+          college: '',
+          major: '',
+          phone: ''
+        }
 
 			}
 		},
 		methods: {
-			//性别显示转换
-			formatSex: function (row, column) {
-				return row.sex == 1 ? '男' : row.sex == 0 ? '女' : '未知';
-			},
 			handleCurrentChange(val) {
 				this.page = val;
 				this.getUsers();
