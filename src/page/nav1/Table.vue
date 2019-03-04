@@ -44,7 +44,7 @@
 		<!--工具条-->
 		<el-col :span="24" class="toolbar">
 			<el-button type="danger" @click="batchRemove" :disabled="this.sels.length===0">批量删除</el-button>
-			<el-pagination layout="prev, pager, next" @current-change="handleCurrentChange" :page-size="20" :total="total" style="float:right;">
+			<el-pagination layout="prev, pager, next" @current-change="handleCurrentChange" :page-size="20" :total="count" style="float:right;">
 			</el-pagination>
 		</el-col>
 
@@ -114,8 +114,9 @@
 					name: ''
 				},
 				users: [],
-				total: 0,
-				page: 1,
+        count: 0,
+        pageNum: 10,
+        pageStart:0,
 				listLoading: false,
 				sels: [],//列表选中列
 
@@ -163,13 +164,14 @@
 			//获取用户列表
 			getUsers() {
 				let para = {
-					page: this.page,
-					name: this.filters.name
+          pageNum: this.page,
+          pageStart:this.pageStart,
+          keyword: this.filters.name
 				};
 				this.listLoading = true;
 				//NProgress.start();
 				getUserListPage(para).then((res) => {
-					this.total = res.data.total;
+					this.count = res.data.count;
 					this.users = res.data.users;
 					this.listLoading = false;
 					//NProgress.done();
