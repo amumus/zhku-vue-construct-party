@@ -164,7 +164,7 @@
 			//获取用户列表
 			getUsers() {
 				let para = {
-          pageNum: this.page,
+          pageNum: this.pageNum,
           pageStart:this.pageStart,
           keyword: this.filters.name
 				};
@@ -172,7 +172,7 @@
 				//NProgress.start();
 				getUserListPage(para).then((res) => {
 					this.count = res.data.count;
-					this.users = res.data.users;
+					this.users = res.data.data.data;
 					this.listLoading = false;
 					//NProgress.done();
 				});
