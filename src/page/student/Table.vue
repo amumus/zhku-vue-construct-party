@@ -114,7 +114,7 @@
         <el-form-item label="邮箱" prop="email">
           <el-input v-model="addForm.email" auto-complete="off"></el-input>
         </el-form-item>
-        <el-form-item label="政治面貌" prop="email">
+        <el-form-item label="政治面貌" prop="politicalStatus">
           <el-select v-model="addForm.politicalStatus" placeholder="请选择">
             <el-option
               v-for="item in politicalStatus"

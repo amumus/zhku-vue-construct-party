@@ -19,10 +19,14 @@ export const editUser = params => { return axios.get(`${base}/user/editUserBySel
 
 export const addUser = params => { return axios.get(`${base}/user/addUser`, { params: params }); };
 //文章界面
-export const addNews = params => { return axios.get(`${base}/news/addNews`, { params: params }); };
+// export const addNews = params => { return axios.get(`${base}/news/addNews`, { params: params }); };
 export const getNewsList = params => { return axios.get(`${base}/news/getNewsList`, { params: params }); };
 export const editNews = params => { return axios.get(`${base}/news/editNewsById`, { params: params }); };
-export const removeNews  = params => { return axios.get(`${base}/news/removeNewsById`, { params: params }); };
-export const batchRemoveNews  = params => { return axios.get(`${base}/news/batchRemoveNews`, { params: params }); };
+export const removeNews  = params => { return axios.get(`${base}/news/deleteNews`, { params: params }); };
+export const batchRemoveNews  = params => { return axios.get(`${base}/news/batchDeleteNews`, { params: params }); };
 export const getNewsDetail  = params => { return axios.get(`${base}/news/getNews`, { params: params }); };
 
+//视频列表
+export const getVideoList = params => { return axios.get(`${base}/video/listVideo`, { params: params }); };
+export const removeVideo  = params => { return axios.get(`${base}/video/deleteVideo`, { params: params }); };
+export const batchRemoveVideo  = params => { return axios.get(`${base}/video/batchDeleteVideo`, { params: params }); };
