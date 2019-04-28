@@ -14,7 +14,7 @@ module.exports = {
         // 测试服务器
         // target: 'http://134.175.1.174:8888',
         // 本地
-        target: 'http://127.0.0.1:8080',
+        target: 'http://127.0.0.1:8888',
         changeOrigin: true,//允许跨域
         pathRewrite:{
           '^/portal':'/portal'

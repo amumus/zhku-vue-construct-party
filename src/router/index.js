@@ -15,6 +15,8 @@ import VideoList from "@/page/video/VideoList"
 import AddNews from  "@/page/news/AddNews"
 import  NewsList from "@/page/news/NewsList"
 
+//积分
+import ScoreList from "@/page/score/ScoreList"
 Vue.use(Router)
 
 export default new Router({
@@ -71,7 +73,7 @@ export default new Router({
       children: [
         { path: '/main', component: Main, name: '主页', hidden: true },
         { path: '/addVideo', component: AddVideo, name: '添加视频' },
-        { path: '/videoList', component: VideoList, name: '视频列表' },
+        { path: '/ScoreList', component: ScoreList, name: '积分列表' },
       ]
     },
   ]
