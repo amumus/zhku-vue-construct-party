@@ -1,7 +1,6 @@
 <template>
   <div>
-    <base-header></base-header>
-    <hr/>
+    <!--<base-header></base-header>-->
     <!--<div>-->
       <!--用户名:<input type="text" v-model="loginInfoVo.username" placeholder="请输入用户名"/>-->
       <!--<br/>-->
@@ -25,8 +24,7 @@
         <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
       </el-form-item>
     </el-form>
-    <hr/>
-    <base-footer></base-footer>
+    <!--<base-footer></base-footer>-->
   </div>
 </template>
 

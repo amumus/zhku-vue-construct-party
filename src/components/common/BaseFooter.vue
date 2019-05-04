@@ -1,6 +1,5 @@
 <template>
     <div>
-      脚部
     </div>
 </template>
 

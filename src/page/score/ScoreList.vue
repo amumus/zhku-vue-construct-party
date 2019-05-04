@@ -6,6 +6,26 @@
 				<el-form-item>
 					<el-input v-model="filters.name" placeholder="姓名、学号、用户名"></el-input>
 				</el-form-item>
+        <el-form-item>
+          <el-select v-model="filters.college" placeholder="请选择学院">
+            <el-option
+              v-for="item in collegeList"
+              :key="item.value"
+              :label="item.value"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <el-select v-model="filters.major" placeholder="请选择专业">
+            <el-option
+              v-for="item in majorList"
+              :key="item.value"
+              :label="item.value"
+              :value="item.value">
+            </el-option>
+          </el-select>
+        </el-form-item>
 				<el-form-item>
 					<el-button type="primary" v-on:click="getUsers">查询</el-button>
 				</el-form-item>
@@ -21,15 +41,15 @@
 			</el-table-column>
 			<el-table-column type="index" width="60">
 			</el-table-column>
-      <el-table-column prop="identityCode" label="学号" width="120" sortable>
+      <el-table-column prop="identity_code" label="学号" width="160" sortable>
       </el-table-column>
-			<el-table-column prop="name" label="姓名" width="120" sortable>
+			<el-table-column prop="name" label="姓名" width="160" sortable>
 			</el-table-column>
-			<el-table-column prop="college" label="学院" width="100" sortable>
+			<el-table-column prop="college" label="学院" width="120" sortable>
 			</el-table-column>
-			<el-table-column prop="major" label="专业" width="120" sortable>
+			<el-table-column prop="major" label="专业" width="140" sortable>
 			</el-table-column>
-			<el-table-column prop="score" label="积分" min-width="100" sortable>
+			<el-table-column prop="score" label="积分" min-width="120" sortable>
 			</el-table-column>
 		</el-table>
 
@@ -49,7 +69,9 @@
 		data() {
 			return {
 				filters: {
-					name: ''
+					name: '',
+          college:'',
+          major:''
 				},
 				users: [],
         count: 0,
@@ -58,7 +80,26 @@
 				listLoading: false,
 				sels: [],//列表选中列
         collegeOption:[],//计算科学学院
-        majorOption:[],//专业信息与计算科学
+        majorOption:[],//专业信息与计算科学,
+        collegeList:[
+          {
+            value:'计算科学学院'
+          },
+          {
+            value:'农学院'
+          },
+          {
+            value:'经贸学院'
+          }
+        ],
+        majorList:[
+          {
+            value:'信息与计算科学'
+          },
+          {
+            value:'园林园艺'
+          }
+        ]
 			}
 		},
 		methods: {

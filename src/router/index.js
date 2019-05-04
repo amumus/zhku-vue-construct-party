@@ -41,8 +41,8 @@ export default new Router({
       children: [
         { path: '/main', component: Main, name: '主页', hidden: true },
         { path: '/table', component: Table, name: '用户列表' },
-        { path: '/form', component: Form, name: 'Form' },
-        { path: '/user', component: User, name: '列表' },
+        // { path: '/form', component: Form, name: 'Form' },
+        // { path: '/user', component: User, name: '列表' },
       ]
     },
     {
@@ -72,7 +72,7 @@ export default new Router({
       iconCls: 'el-icon-menu',//图标样式class
       children: [
         { path: '/main', component: Main, name: '主页', hidden: true },
-        { path: '/addVideo', component: AddVideo, name: '添加视频' },
+        // { path: '/addVideo', component: AddVideo, name: '添加视频' },
         { path: '/ScoreList', component: ScoreList, name: '积分列表' },
       ]
     },

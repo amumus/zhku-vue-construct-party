@@ -232,7 +232,7 @@
       },
       //显示新增界面
       handleAdd: function () {
-        this.$router.replace({path: '/newsList'})
+        this.$router.replace({path: '/addNews'})
       },
       //编辑
       editSubmit: function () {
