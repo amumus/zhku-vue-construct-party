@@ -30,3 +30,6 @@ export const getNewsDetail  = params => { return axios.get(`${base}/news/getNews
 export const getVideoList = params => { return axios.get(`${base}/video/listVideo`, { params: params }); };
 export const removeVideo  = params => { return axios.get(`${base}/video/deleteVideo`, { params: params }); };
 export const batchRemoveVideo  = params => { return axios.get(`${base}/video/batchDeleteVideo`, { params: params }); };
+
+//积分列表
+export const getUserScoreList = params =>{return axios.get(`${base}/score/getUserScoreList`,{ params: params });};
