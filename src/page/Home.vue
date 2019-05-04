@@ -99,7 +99,7 @@
         sysName: '仲恺党建app后台管理系统',
         collapsed: false,
         sysUserName: 'admin',
-        sysUserAvatar: '../assets/logo.png',
+        sysUserAvatar: 'http://134.175.1.174/album_images/images/14/9/2898ae53-6c1f-4e82-a2cd-34e08100317a.jpg',
         form: {
           name: '',
           region: '',
