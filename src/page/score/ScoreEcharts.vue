@@ -13,7 +13,7 @@
       <el-col :span="12">
         <div id="chartPie" style="width:100%; height:400px;"></div>
       </el-col>
-      <el-col :span="24">
+      <el-col :span="12">
         <a href="http://echarts.baidu.com/examples.html" target="_blank" style="float: right;">more>></a>
       </el-col>
     </el-row>
@@ -35,16 +35,16 @@
       drawColumnChart() {
         this.chartColumn = echarts.init(document.getElementById('chartColumn'));
         this.chartColumn.setOption({
-          title: { text: 'Column Chart' },
+          title: { text: '积分前十' },
           tooltip: {},
           xAxis: {
-            data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"]
+            data: ["1","2","3","4","5","6","7",'8','9','10']
           },
           yAxis: {},
           series: [{
-            name: '销量',
+            name: '积分',
             type: 'bar',
-            data: [5, 20, 36, 10, 10, 20]
+            data: [100,500,21,4,5,6,7,8,9,10]
           }]
         });
       },
