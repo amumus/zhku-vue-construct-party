@@ -76,7 +76,7 @@ export default new Router({
         { path: '/main', component: Main, name: '主页', hidden: true },
         // { path: '/addVideo', component: AddVideo, name: '添加视频' },
         { path: '/ScoreList', component: ScoreList, name: '积分列表' },
-        { path: '/ScoreEcharts', component: ScoreEcharts, name: '积分图标' },
+        { path: '/ScoreEcharts', component: ScoreEcharts, name: '积分图表' },
       ]
     },
   ]

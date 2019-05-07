@@ -14,10 +14,11 @@ export const batchRemoveUser = params => { return axios.get(`${base}/user/batchr
 
 //用户界面
 export const getUserList = params => { return axios.get(`${base}/user/list`, { params: params }); };
-
 export const editUser = params => { return axios.get(`${base}/user/editUserBySelect`, { params: params }); };
-
 export const addUser = params => { return axios.get(`${base}/user/addUser`, { params: params }); };
+export const getCollegeList = params => { return axios.get(`${base}/user/getCollegeList`, { params: params }); };
+export const getMajorList = params => { return axios.get(`${base}/user/getMajorList`, { params: params }); };
+
 //文章界面
 // export const addNews = params => { return axios.get(`${base}/news/addNews`, { params: params }); };
 export const getNewsList = params => { return axios.get(`${base}/news/getNewsList`, { params: params }); };
@@ -33,3 +34,7 @@ export const batchRemoveVideo  = params => { return axios.get(`${base}/video/bat
 
 //积分列表
 export const getUserScoreList = params =>{return axios.get(`${base}/score/getUserScoreList`,{ params: params });};
+
+//积分图表
+export const getTop10Student = params =>{return axios.get(`${base}/score/getTop10Student`,{ params: params });};
+export const getScorePercentList = params =>{return axios.get(`${base}/score/scorePercentList`,{ params: params });};

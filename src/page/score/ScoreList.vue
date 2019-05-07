@@ -7,7 +7,7 @@
 					<el-input v-model="filters.name" placeholder="姓名、学号、用户名"></el-input>
 				</el-form-item>
         <el-form-item>
-          <el-select v-model="filters.college" placeholder="请选择学院">
+          <el-select v-model="filters.college" clearable @change="doGetMajorList(filters.college)" placeholder="请选择学院">
             <el-option
               v-for="item in collegeList"
               :key="item.value"
@@ -17,7 +17,7 @@
           </el-select>
         </el-form-item>
         <el-form-item>
-          <el-select v-model="filters.major" placeholder="请选择专业">
+          <el-select v-model="filters.major" clearable  placeholder="请选择专业">
             <el-option
               v-for="item in majorList"
               :key="item.value"
@@ -43,8 +43,10 @@
 			</el-table-column>
       <el-table-column prop="identity_code" label="学号" width="160" sortable>
       </el-table-column>
-			<el-table-column prop="name" label="姓名" width="160" sortable>
+			<el-table-column prop="name" label="姓名" width="120" sortable>
 			</el-table-column>
+      <el-table-column prop="user_name" label="用户名（昵称）" width="160" sortable>
+      </el-table-column>
 			<el-table-column prop="college" label="学院" width="120" sortable>
 			</el-table-column>
 			<el-table-column prop="major" label="专业" width="140" sortable>
@@ -63,7 +65,7 @@
 
 <script>
 	import util from '../../common/js/util'
-	import { getUserScoreList } from '../../api/api';
+	import { getUserScoreList,getCollegeList,getMajorList } from '../../api/api';
 
 	export default {
 		data() {
@@ -92,14 +94,7 @@
             value:'经贸学院'
           }
         ],
-        majorList:[
-          {
-            value:'信息与计算科学'
-          },
-          {
-            value:'园林园艺'
-          }
-        ]
+        majorList:[]
 			}
 		},
 		methods: {
@@ -112,7 +107,9 @@
 				let para = {
           pageNum: this.pageNum,
           pageStart:this.pageStart,
-          keyword: this.filters.name
+          keyword: this.filters.name,
+          college:this.filters.college,
+          major:this.filters.major
 				};
 				this.listLoading = true;
 				//NProgress.start();
@@ -127,10 +124,31 @@
 			selsChange: function (sels) {
 				this.sels = sels;
 			},
+      doGetCollegeList:function () {
+			  let that = this;
+			  getCollegeList().then((res)=>{
+           console.log(res);
+           that.collegeList = res.data.data;
+         })
 
+      },
+      doGetMajorList:function(){
+			  let that = this;
+        let para = {
+          college: this.filters.college
+        }
+        // console.log(para.college+'1111111111111111111');
+			  getMajorList(para).then((res)=>{
+			    console.log(res);
+			    that.majorList = res.data.data;
+        })
+        this.filters.major = null;
+      }
 		},
 		mounted() {
 			this.getUsers();
+			this.doGetCollegeList();
+			this.doGetMajorList();
 		}
 	}
 
